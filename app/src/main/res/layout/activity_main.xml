@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<androidx.recyclerview.widget.RecyclerView
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="vertical"
-    android:padding="5dp"
-    android:id="@+id/RecycleView"
-   ></androidx.recyclerview.widget.RecyclerView>
+    <androidx.recyclerview.widget.RecyclerView
 
-
+        android:id="@+id/RecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:background="@color/w1"
+        android:padding="5dp"
+        android:scrollbars="vertical"></androidx.recyclerview.widget.RecyclerView>
 
 
 </RelativeLayout>

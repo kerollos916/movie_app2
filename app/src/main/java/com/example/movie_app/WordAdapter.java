@@ -41,12 +41,17 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-if(listener != null){
-    int position = getAdapterPosition();
-    if (position != RecyclerView.NO_POSITION){
-    listener.onItemClick(position);
+
+
+
+
+            if(listener != null){
+              int position = getAdapterPosition();
+                 if (position != RecyclerView.NO_POSITION){
+                 listener.onItemClick(position);
     }
 }
+
                 }
             });
 
@@ -63,6 +68,7 @@ if(listener != null){
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_itme, parent, false);
         WordViewHolder wordViewHolder = new WordViewHolder(v,mlistener);
         return wordViewHolder ;
+
     }
 
 
@@ -73,10 +79,13 @@ if(listener != null){
         holder.mTextView.setText(currentitem.getTxt1());
         holder.mTextView2.setText(currentitem.getTxt2());
 
-    }
+        }
+
+
 
     @Override
     public int getItemCount() {
+
         return mArrayList.size();
     }
 

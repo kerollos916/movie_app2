@@ -5,10 +5,10 @@ package com.example.movie_app;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
     private WordAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     public  ArrayList<ItemData> list;
+    String st ;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +32,15 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
+
+
         mAdapter.SetonItemClickListener(new WordAdapter.onItemClickListener() {
             @Override
             public void onItemClick(int position) {
+
                 String list1txt =list.get(position).getTxt1();
                 Intent intent =new Intent(MainActivity.this,DetalisActivity.class);
+
                 intent.putExtra("name",list1txt);
                 startActivity(intent);
 
@@ -47,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private void CreateArrayList() {
 
             list = new ArrayList<>();
-            list.add(new ItemData(R.drawable.ic_movie,"txt1","txt2"));
+            list.add(new ItemData(R.drawable.download,"عودت اسود الارض","txt2"));
             list.add(new ItemData(R.drawable.ic_movie,"txt2","txt2"));
             list.add(new ItemData(R.drawable.ic_movie,"txt3","txt2"));
             list.add(new ItemData(R.drawable.ic_movie,"txt4","txt2"));
@@ -56,11 +63,20 @@ public class MainActivity extends AppCompatActivity {
             list.add(new ItemData(R.drawable.ic_movie,"txt7","txt2"));
             list.add(new ItemData(R.drawable.ic_movie,"txt8","txt2"));
             list.add(new ItemData(R.drawable.ic_movie,"txt9","txt2"));
-            list.add(new ItemData(R.drawable.ic_movie,"txt10","txt2"));
+            list.add(new ItemData(R.drawable.ic_movie,"txt10","txt2"));}
 
 
+    public void putex (Void v) {
 
-        }}
+        Intent intent = new Intent(MainActivity.this, DetalisActivity.class);
+
+        intent.putExtra("name2", R.id.txt2);
+        startActivity(intent);
+
+
+    }}
+
+
 
 
 
